@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div id="taskView" class="row">
+    <div style="margin-left: 20px;">
+        <div class="controls-row">
+            <input type="text" data-bind="value: currentTaskName, valueUpdate: 'afterkeydown'" />
+            <input id="taskDate" type="date" class="input-medium" data-bind="text: currentTaskDate" />
+        </div>              
+        <div class="controls-row">
+            <button class="btn btn-primary" data-bind="click: addNewTask">Add New Task</button>                        
+        </div>
+    </div>
+    <div class="controls-row span8">   
+        <div data-bind="visible: taskList().length > 0" style="padding-top: 40px; margin-left: 10px;">
+            <input type="checkbox" name="chkAllDone" data-bind="checked: allDone, click: $root.updateStatusForAll" />
+            <strong>Mark All as complete</strong>
+        </div>     
+        <table class="table table-striped table-bordered">                                   
+            <tbody data-bind="foreach: taskList">            
+                <tr>                
+                    <td>
+                        <input type="checkbox" name="chkDone" data-bind="checked: Done, click: $root.updateStatus" />
+                    </td>
+                    <td>
+                        <span data-bind="text: Text"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: Date"></span>
+                    </td>
+                    <td>
+                        <a href="#" data-bind="click: $root.deleteTask.bind($data)">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div data-bind="visible: taskList().length > 0" class="controls-row span8" style="margin-left: 20px;">
+        <strong data-bind="text: $root.numItemsNotDone"></strong>
+        <strong>&nbsp;Items left</strong>
+    </div>    
+</div>
+ 
