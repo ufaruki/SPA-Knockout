@@ -19,7 +19,7 @@ namespace TasksApp
                         "~/Scripts/libs/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/libs").Include(
-                        "~/Scripts/libs/knockout-2.2.0.js",
+                        "~/Scripts/libs/knockout-{version}.js",
                         "~/Scripts/libs/underscore.js",
                         "~/Scripts/libs/moment.js"));
 

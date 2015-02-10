@@ -256,7 +256,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Readme.md" />
     <None Include="Scripts\libs\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\calendar_icon.gif" />
     <Content Include="Scripts\app\bootstrapper.js" />
@@ -264,6 +263,8 @@
     <Content Include="Scripts\app\model.js" />
     <Content Include="Scripts\app\vm-task.js" />
     <Content Include="Scripts\app\vm.js" />
+    <Content Include="Scripts\libs\knockout-3.2.0.debug.js" />
+    <Content Include="Scripts\libs\knockout-3.2.0.js" />
     <Content Include="Scripts\libs\jquery-1.8.2.js" />
     <Content Include="Scripts\libs\jquery-1.8.2.min.js" />
     <None Include="Scripts\libs\jquery.validate-vsdoc.js" />
@@ -275,13 +276,12 @@
     <Content Include="Scripts\libs\jquery.validate.min.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\libs\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\libs\knockout-2.2.0.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
-    <Content Include="Scripts\libs\moment.js" />
     <Content Include="Scripts\libs\require.js" />
     <Content Include="Scripts\libs\underscore.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\libs\moment-with-locales.js" />
+    <Content Include="Scripts\libs\moment.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
