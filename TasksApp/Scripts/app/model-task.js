@@ -3,11 +3,11 @@
         Task = function () {
             var self = this;
 
-            self.Id = 0;
-            self.Order = 0;
-            self.Done = ko.observable(false);
-            self.Text = ko.observable('');
-            self.Date = ko.observable(new Date());
+            self.id = 0;
+            self.order = 0;
+            self.done = ko.observable(false);
+            self.text = ko.observable('');
+            self.date = ko.observable(new Date());
         };
 
     return Task;

@@ -22,13 +22,13 @@
             <tbody data-bind="foreach: taskList">            
                 <tr>                
                     <td>
-                        <input type="checkbox" name="chkDone" data-bind="checked: Done, click: $root.updateStatus" />
+                        <input type="checkbox" name="chkDone" data-bind="checked: done, click: $root.updateStatus" />
                     </td>
                     <td>
-                        <span data-bind="text: Text"></span>
+                        <span data-bind="text: text"></span>
                     </td>
                     <td>
-                        <span data-bind="text: Date"></span>
+                        <span data-bind="text: date"></span>
                     </td>
                     <td>
                         <a href="#" data-bind="click: $root.deleteTask.bind($data)">Delete</a>

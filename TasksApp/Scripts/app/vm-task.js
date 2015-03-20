@@ -17,17 +17,17 @@
                     ko.utils.arrayForEach(data, function (d) {
                         var task = new models.model_task();
 
-                        task.Id = d.Id;
-                        task.Order = d.Order;
-                        task.Done(d.Done);
-                        task.Text(d.Text);
+                        task.id = d.Id;
+                        task.order = d.Order;
+                        task.done(d.Done);
+                        task.text(d.Text);
 
                         var date = new Date(d.Date);
                         date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
 
-                        task.Date(date);
+                        task.date(date);
 
-                        if (task.Done())
+                        if (task.done())
                             doneCount++;
 
                         taskList.push(task);
@@ -71,10 +71,10 @@
             }
 
             var task = new models.model_task();
-            task.Order = 1;
-            task.Text = currentTaskName();
-            task.Done(false);
-            task.Date(dateValue);
+            task.order = 1;
+            task.text = currentTaskName();
+            task.done(false);
+            task.date(dateValue);
 
             $.ajax({
                 url: baseUrl + 'task/addtask',
@@ -111,8 +111,8 @@
         updateStatus = function (data) {
             var listOfIds = [], taskStatus = false;
 
-            listOfIds.push(data.Id);
-            taskStatus = data.Done();
+            listOfIds.push(data.id);
+            taskStatus = data.done();
 
             $.ajax({
                 url: baseUrl + 'task/updatestatus',
@@ -133,7 +133,7 @@
             var listOfIds = [], taskStatus = false;
 
             ko.utils.arrayForEach(taskList(), function (task) {
-                listOfIds.push(task.Id);
+                listOfIds.push(task.id);
             });
 
             taskStatus = allDone();
@@ -145,7 +145,7 @@
                 type: 'POST',
                 success: function (response, status) {                   
                     ko.utils.arrayForEach(taskList(), function (task) {
-                        task.Done(taskStatus);
+                        task.done(taskStatus);
                     });
                 },
                 error: function (response, status, r) {
@@ -156,7 +156,7 @@
             return true;
         },
         numItemsNotDone = ko.computed(function () {
-            var itemsNotDone = _.filter(taskList(), function (task) { return !task.Done(); });
+            var itemsNotDone = _.filter(taskList(), function (task) { return !task.done(); });
 
             if (itemsNotDone)
                 return itemsNotDone.length;
