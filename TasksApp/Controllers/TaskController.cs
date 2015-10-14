@@ -20,12 +20,7 @@ namespace TasksApp.Controllers
 
         [HttpGet]
         public string Tasks()
-        {
-            //JsonResult tasks = new JsonResult();            
-            //tasks.Data = taskRepository.getAllTasks();
-            //tasks.ContentType = "json";
-            //tasks.ContentEncoding = System.Text.UTF8Encoding.UTF8;
-            //tasks.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+        {           
             var tasks = taskRepository.getAllTasks().ToList();
             JsonSerializerSettings settings = new JsonSerializerSettings();           
             string jsonModel = Newtonsoft.Json.JsonConvert.SerializeObject(tasks);
@@ -37,8 +32,7 @@ namespace TasksApp.Controllers
         public void AddTask(Task task)
         {
             string date = task.Date.ToShortDateString();
-            task.Date = Convert.ToDateTime(task.Date.ToShortDateString());
-            //DateTime dt = new DateTime();
+            task.Date = Convert.ToDateTime(task.Date.ToShortDateString());            
             taskRepository.addTask(task);        
         }
         
